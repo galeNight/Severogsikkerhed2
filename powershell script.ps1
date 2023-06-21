@@ -23,11 +23,4 @@ $DNS = "192.168.128.2"
 Add-DhcpServerv4Scope -Name $ScopeName -StartRange $StartRange -EndRange $EndRange -SubnetMask $SubnetMask -DefualtGateway $DefaultGateway -ComputerName LocalHost
 Set-DhcpServerv4OptionValue -ScopeId $ScopeName -DnsServer $DNS
 
-#Organizatial unit(OU)
-Get-Module activeDirectory
-$OUname = "KursusAS"
-$ParentPath = "OU=KursusAS,DC=KursusX,DC=com"
-New-ADOrganizationalUnit -Name "økonomi adf" -Path $ParentPath
-
-#??????
-$UserName = "JohnDoe"$Password = ConvertTo-SecureString "P@ssw0rd" -AsPlainText -Force$OUPath = "OU=HR,Adm&IT afd,KursusAS,DC=KursusX,DC=com"$UserPrincipalName = "$UserName@KursusX.com"$FirstName = "John"$LastName = "Doe"New-ADUser -SamAccountName $UserName -UserPrincipalName $UserPrincipalName -GivenName $FirstName -Surname $LastName -Name "$FirstName $LastName" -Enabled $true -PasswordNeverExpires $true -AccountPassword $Password -Path $OUPath
+
