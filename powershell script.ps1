@@ -1,4 +1,5 @@
-﻿#static ip sever
+#https://portal.azure.com/?Microsoft_Azure_Education_correlationId=6e71767656ff41b68024bdf39226b83e&Microsoft_Azure_Education_newA4E=true&Microsoft_Azure_Education_asoSubGuid=871ac81d-adc1-43e4-a8c1-2de2e310fffa#view/Microsoft_Azure_Education/EducationMenuBlade/~/software
+#static ip sever
 New-NetIPAddress -InterfaceAlias "Ethernet 2" -IPAddress "192.168.128.2" -PrefixLength 24 -DefaultGateway "192.168.128.1"
 #Dns IP
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet 2" -ServerAddresses "192.168.128.2"
@@ -23,4 +24,4 @@ $DNS = "192.168.128.2"
 Add-DhcpServerv4Scope -Name $ScopeName -StartRange $StartRange -EndRange $EndRange -SubnetMask $SubnetMask -DefualtGateway $DefaultGateway -ComputerName LocalHost
 Set-DhcpServerv4OptionValue -ScopeId $ScopeName -DnsServer $DNS
 
-
+
